@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#151927" />
+    <meta name="description" content="Relay：一个以任务、依据与人工确认组织邮件的 Agent Native 邮箱概念演示。" />
+    <title>Relay — 让邮件替你推进事情</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="主导航">
+        <div class="brand"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span><span>relay<span class="brand-period">.</span></span></div>
+        <p class="sidebar-kicker">你的邮件工作台</p>
+        <nav class="side-nav" aria-label="功能导航">
+          <button class="nav-item active" type="button" data-view="home"><span class="nav-icon" aria-hidden="true">◫</span><span>工作台</span><span class="nav-count" id="nav-review-count">1</span></button>
+          <button class="nav-item" type="button" data-view="inbox"><span class="nav-icon" aria-hidden="true">▤</span><span>收件箱</span><span class="nav-count">4</span></button>
+          <button class="nav-item" type="button" data-view="done"><span class="nav-icon" aria-hidden="true">✓</span><span>已完成</span></button>
+        </nav>
+        <div class="sidebar-spacer"></div>
+        <button class="nav-item quiet" type="button" data-view="permissions"><span class="nav-icon" aria-hidden="true">◇</span><span>权限与边界</span></button>
+        <div class="sidebar-footer"><span class="sidebar-avatar">JW</span><div><strong>叶剑武</strong><small>个人空间 · 概念演示</small></div></div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <div class="topbar-path"><span>Relay</span><span class="path-divider">/</span><strong id="page-name">工作台</strong></div>
+          <div class="topbar-actions"><span class="demo-tag">演示模式</span><button class="top-link" type="button" data-view="permissions">了解数据边界</button></div>
+        </header>
+        <main id="main-view" tabindex="-1"></main>
+        <footer class="page-footer">Relay 是产品设计概念。邮件、人名、执行过程均为虚构示例。</footer>
+      </div>
+
+      <aside class="inspector" id="inspector" aria-label="任务或邮件详情"></aside>
+    </div>
+    <nav class="mobile-nav" aria-label="移动端导航">
+      <button type="button" data-view="home">工作台</button>
+      <button type="button" data-view="inbox">收件箱</button>
+      <button type="button" data-view="done">已完成</button>
+      <button type="button" data-view="permissions">权限</button>
+    </nav>
+    <div id="modal-root"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
